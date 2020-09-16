@@ -1,0 +1,12 @@
+<h1> Professor Form</h1>
+<%= form_for(@professor) do |p| %>
+    <%= p.label :name %>
+    <%= p.text_field :name %>
+    <%= p.label :department %>
+    <%= p.text_field :department %>
+    <%= p.label:level %>
+    <%= p.text_field :level %>
+
+    <%= p.submit %>
+<%end%>
+     
