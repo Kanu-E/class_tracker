@@ -1,7 +1,10 @@
-<h1>Professors#show</h1>
-<p> Name: <%=@professor.name%></p>
+<h1>Professors</h1>
+<h2> Name: <%=@professor.name%></h2>
 <p> Department: <%=@professor.department%></p>
 <p><%=@professor.level%></p>
 
-<%= link_to 'Edit Professor', edit_professor_path %>
+<td><%= link_to 'Edit Professor', edit_professor_path %></td> <br><br>
+
+<td><%= button_to 'Destroy', @professor, method: :delete, data: { confirm: 'Are you sure?' } %></td> <br>  
+
 <%= link_to "Back", professors_path %>

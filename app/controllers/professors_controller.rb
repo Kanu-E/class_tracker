@@ -7,6 +7,16 @@ class ProfessorsController < ApplicationController
     set_professor
   end
 
+  def edit
+    set_professor
+  end
+
+  def update
+    set_professor
+    @professor.update(professor_params)
+    redirect_to (@professor)
+  end
+
   def new
     @professor = Professor.new
   end
@@ -25,6 +35,13 @@ class ProfessorsController < ApplicationController
     set_professor
     @professor.update(professor_params)
     redirect_to (@professor)
+  end
+
+   
+  def destroy
+    set_professor
+    @professor.destroy
+    redirect_to professors_path (@professors)
   end
 
 

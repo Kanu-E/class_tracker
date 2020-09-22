@@ -1,0 +1,12 @@
+<h1>Students</h1>
+
+<p> Name: <%=@student.first_name%> <%=@student.last_name%></p>
+<p> Email: <%=@student.email%></p>
+<p> Major: <%=@student.major%></p>
+<p><%=@student.identification%></p>
+
+<td><%= link_to 'Edit Student', edit_student_path %></td> <br><br>
+
+<td><%= button_to 'Destroy', @student, method: :delete, data: { confirm: 'Are you sure?' } %></td> <br>  
+
+<%= link_to "Back", students_path %>
