@@ -16,6 +16,19 @@ class ProfessorsController < ApplicationController
     redirect_to (@professor)
   end
 
+  def edit
+    set_professor
+  end
+
+
+  def update
+    set_professor
+    @professor.update(professor_params)
+    redirect_to (@professor)
+  end
+
+
+
   private
   
   def professor_params

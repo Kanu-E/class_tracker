@@ -2,4 +2,6 @@
 <p> Name: <%=@professor.name%></p>
 <p> Department: <%=@professor.department%></p>
 <p><%=@professor.level%></p>
+
+<%= link_to 'Edit Professor', edit_professor_path %>
 <%= link_to "Back", professors_path %>
