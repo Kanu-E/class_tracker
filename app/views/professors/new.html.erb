@@ -1,4 +1,8 @@
 <h1> Professor Form</h1>
+<% @professor.errors.full_messages.each do |msg|%>
+<h4 class="errors"><%= msg %></h4>
+<br>
+<% end %>
 <%= form_for(@professor) do |p| %>
     <%= p.label :name %>
     <%= p.text_field :name %>

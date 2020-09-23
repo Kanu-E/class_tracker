@@ -1,20 +1,11 @@
 class ProfessorsController < ApplicationController
+  before_action :set_professor, only: [:show, :edit, :update, :destroy]
+
   def index
     @professors = Professor.all
   end
 
   def show
-    set_professor
-  end
-
-  def edit
-    set_professor
-  end
-
-  def update
-    set_professor
-    @professor.update(professor_params)
-    redirect_to (@professor)
   end
 
   def new
@@ -22,30 +13,30 @@ class ProfessorsController < ApplicationController
   end
 
   def create
-    @professor = Professor.create(professor_params)
+    @professor = Professor.new(professor_params)
+    if @professor.save
+      redirect_to (@professor)
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @professor.update(professor_params)
     redirect_to (@professor)
+    else 
+      render :edit
+    end
   end
 
   def edit
-    set_professor
   end
-
-
-  def update
-    set_professor
-    @professor.update(professor_params)
-    redirect_to (@professor)
-  end
-
    
   def destroy
-    set_professor
     @professor.destroy
     redirect_to professors_path (@professors)
   end
-
-
-
+  
   private
   
   def professor_params
@@ -55,6 +46,5 @@ class ProfessorsController < ApplicationController
   def set_professor
     @professor = Professor.find(params[:id])
   end
-
 
 end
