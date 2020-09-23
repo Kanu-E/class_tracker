@@ -1,6 +1,6 @@
 <h1> Professor Create Form</h1>
 <% @professor.errors.full_messages.each do |msg|%>
-<%= msg %>
+<h4 class=errors><%= msg %></h4>
 <% end %>
 <%= form_for(@professor) do |p| %>
     <%= p.label :name %>
