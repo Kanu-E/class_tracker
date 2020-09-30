@@ -1,0 +1,9 @@
+<%= form_with model: @course, local: true do |f| %>
+<%= f.label :name%>
+<%= f.text_field :name%>
+<%= f.label :location%>
+<%= f.text_field :location%>
+<%= f.collection_select :professor_id, Professor.all, :id, :name, prompt: true %>
+<%= f.collection_select :student_id, Student.all, :id, :to_s, prompt: true%>
+<%= f.submit%>
+<% end %>
